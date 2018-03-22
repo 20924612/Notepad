@@ -1,12 +1,15 @@
 
+import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.undo.UndoManager;
 
@@ -108,23 +111,24 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu6 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
 
-        jMenu1.setText("jMenu1");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("Bundle"); // NOI18N
+        jMenu1.setText(bundle.getString("MainFrame.jMenu1.text")); // NOI18N
 
-        jMenu4.setText("File");
+        jMenu4.setText(bundle.getString("MainFrame.jMenu4.text")); // NOI18N
         jMenuBar2.add(jMenu4);
 
-        jMenu5.setText("Edit");
+        jMenu5.setText(bundle.getString("MainFrame.jMenu5.text")); // NOI18N
         jMenuBar2.add(jMenu5);
 
-        jMenuItem1.setText("jMenuItem1");
+        jMenuItem1.setText(bundle.getString("MainFrame.jMenuItem1.text")); // NOI18N
 
-        jMenuItem2.setText("jMenuItem2");
+        jMenuItem2.setText(bundle.getString("MainFrame.jMenuItem2.text")); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jToolBar1.setRollover(true);
 
-        btnSave2.setText("Guardar");
+        btnSave2.setText(bundle.getString("MainFrame.btnSave2.text")); // NOI18N
         btnSave2.setFocusable(false);
         btnSave2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSave2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -135,7 +139,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jToolBar1.add(btnSave2);
 
-        btnOpenFile2.setText("Cargar");
+        btnOpenFile2.setText(bundle.getString("MainFrame.btnOpenFile2.text")); // NOI18N
         btnOpenFile2.setFocusable(false);
         btnOpenFile2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnOpenFile2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -154,9 +158,10 @@ public class MainFrame extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
-        menuSave.setText("File");
+        menuSave.setText(bundle.getString("MainFrame.menuSave.text")); // NOI18N
 
-        btnFileNew.setText("New");
+        btnFileNew.setIcon(new ImageIcon(MainFrame.class.getResource("/com/sun/java/swing/plaf/windows/icons/File.gif")));
+        btnFileNew.setText(bundle.getString("MainFrame.btnFileNew.text")); // NOI18N
         btnFileNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFileNewActionPerformed(evt);
@@ -164,7 +169,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         menuSave.add(btnFileNew);
 
-        btnOpenFIle.setText("Open file");
+        btnOpenFIle.setText(bundle.getString("MainFrame.btnOpenFIle.text")); // NOI18N
         btnOpenFIle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOpenFIleActionPerformed(evt);
@@ -172,7 +177,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         menuSave.add(btnOpenFIle);
 
-        btnSave.setText("Save");
+        btnSave.setText(bundle.getString("MainFrame.btnSave.text")); // NOI18N
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
@@ -180,7 +185,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         menuSave.add(btnSave);
 
-        btnExit.setText("Exit");
+        btnExit.setText(bundle.getString("MainFrame.btnExit.text")); // NOI18N
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
@@ -190,9 +195,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(menuSave);
 
-        jMenu3.setText("Edit");
+        jMenu3.setText(bundle.getString("MainFrame.jMenu3.text")); // NOI18N
 
-        btnUndo.setText("Undo");
+        btnUndo.setText(bundle.getString("MainFrame.btnUndo.text")); // NOI18N
         btnUndo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUndoActionPerformed(evt);
@@ -200,7 +205,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jMenu3.add(btnUndo);
 
-        btnRedo.setText("Redo");
+        btnRedo.setText(bundle.getString("MainFrame.btnRedo.text")); // NOI18N
         btnRedo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRedoActionPerformed(evt);
@@ -210,14 +215,14 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu6.setText("About");
+        jMenu6.setText(bundle.getString("MainFrame.jMenu6.text")); // NOI18N
         jMenu6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu6ActionPerformed(evt);
             }
         });
 
-        jMenuItem3.setText("Help");
+        jMenuItem3.setText(bundle.getString("MainFrame.jMenuItem3.text")); // NOI18N
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -232,11 +237,17 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        // TODO add your handling code here:
+    private void btnExitActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+       int n= JOptionPane.showConfirmDialog(this, "Do you want to exit?",
+                        "Remove test?", JOptionPane.YES_NO_OPTION);
+        if (n == 0) {
+             System.exit(0);
+        }
+       
+        
     }//GEN-LAST:event_btnExitActionPerformed
 
-    private void btnFileNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFileNewActionPerformed
+    private void btnFileNewActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnFileNewActionPerformed
         int n= JOptionPane.showConfirmDialog(this, "Do you want to delete the current text?",
                         "Remove test?", JOptionPane.YES_NO_OPTION);
         if (n == 0) {
@@ -245,7 +256,7 @@ public class MainFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnFileNewActionPerformed
 
-    private void btnSave2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSave2ActionPerformed
+    private void btnSave2ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnSave2ActionPerformed
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
                 "text file", "txt");
@@ -263,7 +274,7 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSave2ActionPerformed
 
-    private void btnOpenFile2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpenFile2ActionPerformed
+    private void btnOpenFile2ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnOpenFile2ActionPerformed
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
                 "text file", "txt");
@@ -281,28 +292,28 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnOpenFile2ActionPerformed
 
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+    private void btnSaveActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         btnSave2ActionPerformed(evt);
 
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private void btnOpenFIleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpenFIleActionPerformed
+    private void btnOpenFIleActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnOpenFIleActionPerformed
         btnOpenFile2ActionPerformed(evt);
     }//GEN-LAST:event_btnOpenFIleActionPerformed
 
-    private void jMenu6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu6ActionPerformed
+    private void jMenu6ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jMenu6ActionPerformed
         JOptionPane.showConfirmDialog(this, "The program is an exercise for the programming subject IES EL CAMINAS", "", JOptionPane.OK_OPTION);
     }//GEN-LAST:event_jMenu6ActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void jMenuItem3ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         JOptionPane.showConfirmDialog(this, "The program is an exercise for the programming subject IES EL CAMINAS", "", JOptionPane.OK_OPTION);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void btnUndoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUndoActionPerformed
+    private void btnUndoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnUndoActionPerformed
         undoManager.undo();
     }//GEN-LAST:event_btnUndoActionPerformed
 
-    private void btnRedoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRedoActionPerformed
+    private void btnRedoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnRedoActionPerformed
         undoManager.redo();
     }//GEN-LAST:event_btnRedoActionPerformed
 
